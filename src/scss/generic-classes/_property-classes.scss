@@ -1,28 +1,67 @@
 /// Generates .display-block, .display-flex, .display: inline-flex, etc generic classes.
 
 $properties: (
-    display: (
-        'block', 'inline', 'inline-block', 'flex', 'inline-flex', 'grid', 'inline-grid', 'table', 'inline-table', 'table-cell', 'table-row', 'list-item', 'none',
-    ),
-    position: (
-        'static', 'relative', 'absolute', 'fixed', 'sticky',
-    ),
-    float: (
-        'none', 'left', 'right',
-    ),
-    word-break: (
-        'break-all', 'break-word', 'keep-all', 'normal',
-    ),
-    font-weight: (
-        'normal', 'bold', 'bolder', 'light', 300, 400, 500, 600, 700, 800, 900,
-    ),
+  display: (
+    'block',
+    'inline',
+    'inline-block',
+    'flex',
+    'inline-flex',
+    'grid',
+    'inline-grid',
+    'table',
+    'inline-table',
+    'table-cell',
+    'table-row',
+    'list-item',
+    'none',
+  ),
+  position: (
+    'static',
+    'relative',
+    'absolute',
+    'fixed',
+    'sticky',
+  ),
+  float: (
+    'none',
+    'left',
+    'right',
+  ),
+  word-break: (
+    'break-all',
+    'break-word',
+    'keep-all',
+    'normal',
+  ),
+  font-weight: (
+    'normal',
+    'bold',
+    'bolder',
+    'light',
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+  ),
+  text-align: (
+    'left',
+    'center',
+    'right',
+    'justify',
+    'initial',
+    'inherit',
+    'unset',
+  ),
 );
 
-
 @each $property, $values in $properties {
-    @each $value in $values {
-        .#{$property}-#{$value} {
-            #{$property}: #{$value};
-        }
+  @each $value in $values {
+    .#{$property}-#{$value} {
+      #{$property}: #{$value};
     }
+  }
 }

@@ -1,5 +1,25 @@
-@use '../scss/helpers';
+$primary: #4b8ef1;
 
-.flex {
-  @extend .flex-flex-start-space-between;
+.logo {
+  margin-right: auto;
+}
+
+.register-button {
+  margin-left: auto;
+}
+
+.nav-link {
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  color: #2a2a2a;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover,
+  &.active {
+    color: $primary;
+  }
 }
