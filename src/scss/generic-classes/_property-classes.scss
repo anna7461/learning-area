@@ -10,6 +10,9 @@ $properties: (
     float: (
         'none', 'left', 'right',
     ),
+    word-break: (
+        'break-all', 'break-word', 'keep-all', 'normal',
+    ),
 );
 
 
