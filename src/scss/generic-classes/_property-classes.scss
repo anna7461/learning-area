@@ -1,0 +1,16 @@
+/// Generates .display-block, .display-flex, .display: inline-flex, etc generic classes.
+
+$properties: (
+    display: (
+        'block', 'inline', 'inline-block', 'flex', 'inline-flex', 'grid', 'inline-grid', 'table', 'inline-table', 'table-cell', 'table-row', 'list-item', 'none',
+    ),
+);
+
+
+@each $property, $values in $properties {
+    @each $value in $values {
+        .#{$property}-#{$value} {
+            #{$property}: #{$value};
+        }
+    }
+}
