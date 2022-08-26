@@ -4,12 +4,14 @@
   $direction: null,
   $wrap: null,
   $align-items: center,
-  $justify-content: center
+  $justify-content: center,
+  $gap: 0
 ) {
   display: $display;
   flex-flow: $direction $wrap;
   align-items: $align-items;
   justify-content: $justify-content;
+  gap: $gap;
 
   @content;
 }
