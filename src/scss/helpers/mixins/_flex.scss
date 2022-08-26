@@ -1,0 +1,57 @@
+/// Mixin to define flexbox-related properties for parent container.
+@mixin flex(
+  $display: flex,
+  $direction: null,
+  $wrap: null,
+  $align-items: center,
+  $justify-content: center
+) {
+  display: $display;
+  flex-flow: $direction $wrap;
+  align-items: $align-items;
+  justify-content: $justify-content;
+
+  @content;
+}
+
+@mixin flex-item($flex: 1 0 auto, $order: 0) {
+  flex: $flex;
+  order: $order;
+
+  @content;
+}
+
+/// generate mixins based on flex common usages
+$flex-shared-properties: (
+  set1: (
+    display: flex,
+    align-items: center,
+    justify-content: center,
+  ),
+  set2: (
+    display: flex,
+    align-items: center,
+    justify-content: space-between,
+  ),
+  set3: (
+    display: flex,
+    align-items: flex-start,
+    justify-content: space-between,
+  ),
+  set4: (
+    display: flex,
+    align-items: flex-end,
+    justify-content: space-between,
+  ),
+);
+
+@each $set, $list in $flex-shared-properties {
+  $align-items: map-get($flex-shared-properties, $set, align-items);
+  $justify-content: map-get($flex-shared-properties, $set, justify-content);
+
+  .flex-#{$align-items}-#{$justify-content} {
+    display: flex;
+    align-items: $align-items;
+    justify-content: $justify-content;
+  }
+}

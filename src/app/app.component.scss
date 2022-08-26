@@ -1,7 +1,5 @@
-p {
-  font-family: Lato;
+@use '../scss/helpers';
 
-  &.class {
-    color: red;
-  }
+.flex {
+  @extend .flex-flex-start-space-between;
 }
