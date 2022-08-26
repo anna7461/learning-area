@@ -4,6 +4,9 @@ $properties: (
     display: (
         'block', 'inline', 'inline-block', 'flex', 'inline-flex', 'grid', 'inline-grid', 'table', 'inline-table', 'table-cell', 'table-row', 'list-item', 'none',
     ),
+    position: (
+        'static', 'relative', 'absolute', 'fixed', 'sticky',
+    ),
 );
 
 
