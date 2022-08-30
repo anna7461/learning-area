@@ -18,4 +18,4 @@ export class AppComponent {
     navigator.clipboard.writeText(tagText.replace(/\b\s_ngcontent\S+/gi, ''));
   }
 }
-<button class="mbz-btn mbz-btn-success"><span class="mbz-icon">i</span><span class="asd">Success</span></button>
+// <button class="mbz-btn mbz-btn-success"><span class="mbz-icon">i</span><span class="asd">Success</span></button>
