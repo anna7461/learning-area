@@ -8,15 +8,18 @@
   <span>Light</span>
 </button>
 
-<button #buttonElement (click)="handleClick()" class="mbz-btn mbz-btn-success">
+<button class="mbz-btn mbz-btn-success">
   <span class="mbz-icon">i</span>
   <span class="asd">Success</span>
 </button>
 
-<button class="mbz-btn mbz-btn-info">
+<button #buttonElement class="mbz-btn mbz-btn-info">
   <span class="mbz-icon">i</span>
-  <span>Info</span>
+  <span class="aaa">Info</span>
 </button>
+
+<div (click)="handleClick()" class="copy">Copy</div>
+<div *ngIf="fallback" class="fallback-success">Copied</div>
 
 <button class="mbz-btn mbz-btn-warning">
   <span class="mbz-icon">i</span>
