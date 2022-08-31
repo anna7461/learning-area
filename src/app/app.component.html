@@ -8,12 +8,24 @@
         size="{{ size }}"
       ></app-button>
     </div>
-    <div (click)="copyText(type, size)" class="copy">Copy</div>
-    <div *ngIf="fallback" class="fallback-success">Copied</div>
+    <div
+      (click)="copyText(type, size)"
+      id="copyHandler_{{ 'buttonElement{{ i }}' }}"
+      class="copy"
+    >
+      Copy
+    </div>
+    <div
+      *ngIf="showFallback"
+      class="fallback-success"
+      id="fallbackMessage_{{ 'buttonElement{{ i }}' }}"
+    >
+      Copied
+    </div>
   </ng-container>
 </ng-container>
 
-<ng-container *ngFor="let type of types; let i = index">
+<!-- <ng-container *ngFor="let type of types; let i = index">
   <ng-container *ngFor="let size of sizes; let i = index">
     <app-button
       #buttonElement
@@ -26,4 +38,4 @@
     <div (click)="copyText(type, size, true)" class="copy">Copy</div>
     <div *ngIf="fallback" class="fallback-success">Copied</div>
   </ng-container>
-</ng-container>
+</ng-container> -->

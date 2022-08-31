@@ -9,9 +9,9 @@ import { ButtonComponent } from './shared-components/buttons/button/button.compo
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
 
-  public fallback: any;
+  public showFallback: any;
 
-  @ViewChild('buttonElement', { static: false }) anna;
+  // @ViewChild('buttonElement', { static: false }) anna;
 
   types = [
     'success',
@@ -49,8 +49,9 @@ export class AppComponent {
   //     this.fallback = true;
   //   }, 100);
   // }
+  // public showFallback(message: string, type: string) {}
 
-  public copyText(size: string, type: string, outline = false) {
+  public copyText(size: string, type: string, outline = false): void {
     let x = `<app-button`;
 
     if (size) x += ` size="${size}"`;
@@ -58,8 +59,8 @@ export class AppComponent {
     if (outline) x += ` outline`;
     x += `></app-button>`;
     navigator.clipboard.writeText(x);
-    setTimeout(() => (this.fallback = true));
+    this.showFallback = true;
   }
 }
 // <button class="mbz-btn mbz-btn-success"><span class="mbz-icon">i</span><span class="asd">Success</span></button>
-//
+//<app-button size="success" type="ext"></app-button><app-button size="success" type="lg"></app-button><app-button size="info" type="ext"></app-button><app-button size="warning" type="xl"></app-button>
