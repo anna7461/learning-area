@@ -10,6 +10,7 @@ export class AppComponent {
   name = 'Angular ' + VERSION.major;
 
   public showFallback: any;
+  public handleMessage: string = 'copy';
 
   // @ViewChild('buttonElement', { static: false }) anna;
 
@@ -51,16 +52,23 @@ export class AppComponent {
   // }
   // public showFallback(message: string, type: string) {}
 
-  public copyText(size: string, type: string, outline = false): void {
-    let x = `<app-button`;
+  // public copyText(size: string, type: string, outline = false): void {
+  //   let x = `<app-button`;
 
+  //   if (size) x += ` size="${size}"`;
+  //   if (type) x += ` type="${type}"`;
+  //   if (outline) x += ` outline`;
+  //   x += `></app-button>`;
+  //   navigator.clipboard.writeText(x);
+  //   this.showFallback = true;
+  // }
+
+  public copyText(type: string, size: string, outline = false) {
+    let x = `<app-button`;
     if (size) x += ` size="${size}"`;
     if (type) x += ` type="${type}"`;
     if (outline) x += ` outline`;
-    x += `></app-button>`;
+    x += ` label="Button"></app-button>`;
     navigator.clipboard.writeText(x);
-    this.showFallback = true;
   }
 }
-// <button class="mbz-btn mbz-btn-success"><span class="mbz-icon">i</span><span class="asd">Success</span></button>
-//<app-button size="success" type="ext"></app-button><app-button size="success" type="lg"></app-button><app-button size="info" type="ext"></app-button><app-button size="warning" type="xl"></app-button>
