@@ -17,8 +17,6 @@ export class AppComponent {
   public handleClick() {
     const tagText = this.anna.nativeElement.outerHTML;
     navigator.clipboard.writeText(tagText.replace(/\b\s_ngcontent\S+/gi, ''));
-
-    this.fallback = true;
   }
 }
 // <button class="mbz-btn mbz-btn-success"><span class="mbz-icon">i</span><span class="asd">Success</span></button>
