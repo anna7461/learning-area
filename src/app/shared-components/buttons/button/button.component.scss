@@ -29,6 +29,7 @@ $border-radius-xl: 6px;
   white-space: nowrap;
   transition: background-color, color, border 0.2s;
   user-select: none;
+  width: 100%;
 
   &:hover,
   &:active,
@@ -324,8 +325,8 @@ $border-radius-xl: 6px;
 }
 
 .mbz-btn-ext {
-  padding: 15px 26px;
-  font-size: 21px;
+  // padding: 15px 26px;
+  font-size: 16px;
   line-height: 1.3333333;
   border-radius: $border-radius-xl;
 }
@@ -336,7 +337,7 @@ $border-radius-xl: 6px;
   justify-content: center;
   white-space: pre-line;
   max-height: 74.4px;
-  padding: 25px 20px;
+  // padding: 25px 20px;
   font-size: 16px;
   // line-height: (20 / 14);
   border-radius: $border-radius-md;
@@ -344,8 +345,8 @@ $border-radius-xl: 6px;
 }
 
 .mbz-btn-xl {
-  padding: 12px 16px;
-  font-size: 14px;
+  // padding: 12px 16px;
+  font-size: 15px;
   // line-height: (20 / 14);
   border-radius: $border-radius-md;
   border-width: 1px;
@@ -362,14 +363,14 @@ $border-radius-xl: 6px;
 }
 
 .mbz-btn-lg {
-  padding: 10px 16px;
+  // padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
   border-radius: $border-radius-xl;
 }
 
 .mbz-btn-sm {
-  padding: 5px 10px;
+  // padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: $border-radius-sm;
@@ -377,7 +378,7 @@ $border-radius-xl: 6px;
 
 .mbz-btn-xs {
   border-radius: $border-radius-sm;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.5;
-  padding: 1px 7px;
+  // padding: 1px 7px;
 }
