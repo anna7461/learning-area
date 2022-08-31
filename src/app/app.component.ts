@@ -27,17 +27,18 @@ export class AppComponent {
     'blue',
     'white',
   ];
-  sizes = [
-    'ext',
-    'lg',
-    'sm',
-    'xs',
-    'xl',
-    'xl-min-width-100',
-    'xl-min-width-150',
-    'semi-xxl',
-    'xxl',
-  ];
+  // sizes = [
+  //   'ext',
+  //   'lg',
+  //   'sm',
+  //   'xs',
+  //   'xl',
+  //   'xl-min-width-100',
+  //   'xl-min-width-150',
+  //   'semi-xxl',
+  //   'xxl',
+  // ];
+  sizes = ['sm', 'xl', 'semi-xxl', 'lg', 'xxl', 'ext'];
   /**
    * Put clickend element's html element to clipbord to allow paste anywhere.
    * @author Levon Hakobyan

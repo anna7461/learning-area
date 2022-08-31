@@ -24,3 +24,16 @@
     opacity: 0.3;
   }
 }
+
+.grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.grid-row {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 10px;
+}

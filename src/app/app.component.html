@@ -1,17 +1,34 @@
-<div>
-  <ng-container *ngFor="let type of types; let i = index">
-    <ng-container *ngFor="let size of sizes; let i = index">
-      <app-button
-        id="buttonElement{{ i }}"
-        label="{{ type }} {{ size }}"
-        type="{{ type }}"
-        size="{{ size }}"
-        (click)="copyText(type, size)"
-      ></app-button>
-    </ng-container>
-  </ng-container>
-</div>
+<h1>Buttons Kit</h1>
+
 <ng-container *ngFor="let type of types; let i = index">
+  <div>
+    <h3>Type: {{ type }}</h3>
+    <div class="grid">
+      <ng-container *ngFor="let size of sizes; let i = index">
+        <div class="grid-row">
+          <app-button
+            id="buttonElement{{ i }}"
+            label="{{ type }} {{ size }}"
+            type="{{ type }}"
+            size="{{ size }}"
+            (click)="copyText(type, size)"
+          ></app-button>
+
+          <app-button
+            id="buttonElement{{ i }}"
+            label="{{ type }} {{ size }} outlined"
+            type="{{ type }}"
+            size="{{ size }}"
+            (click)="copyText(type, size, true)"
+            outline
+          ></app-button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
+
+<!-- <ng-container *ngFor="let type of types; let i = index">
   <ng-container *ngFor="let size of sizes; let i = index">
     <app-button
       #buttonElement
@@ -22,4 +39,4 @@
       (click)="copyText(type, size, true)"
     ></app-button>
   </ng-container>
-</ng-container>
+</ng-container> -->
