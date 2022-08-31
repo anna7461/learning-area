@@ -1,153 +1,29 @@
-<button class="mbz-btn">
-  <span class="mbz-icon">i</span>
-  <span>Label</span>
-</button>
+<ng-container *ngFor="let type of types; let i = index">
+  <ng-container *ngFor="let size of sizes; let i = index">
+    <div>
+      <app-button
+        id="buttonElement{{ i }}"
+        label="{{ type }} {{ size }}"
+        type="{{ type }}"
+        size="{{ size }}"
+      ></app-button>
+    </div>
+    <div (click)="copyText(type, size)" class="copy">Copy</div>
+    <div *ngIf="fallback" class="fallback-success">Copied</div>
+  </ng-container>
+</ng-container>
 
-<app-button [label]="'Success'" type="success" outline></app-button>
+<ng-container *ngFor="let type of types; let i = index">
+  <ng-container *ngFor="let size of sizes; let i = index">
+    <app-button
+      #buttonElement
+      label="{{ type }} {{ size }}"
+      type="{{ type }}"
+      size="{{ size }}"
+      outline
+    ></app-button>
 
-<app-button [label]="'Success'" type="primary" size="xxl"></app-button>
-
-<app-button [label]="'Success'" type="secondary" size="sm"></app-button>
-
-<button class="mbz-btn mbz-btn-light">
-  <!-- <span class="mbz-icon"></span> -->
-  <span>Light</span>
-</button>
-
-<button class="mbz-btn mbz-btn-success">
-  <span class="mbz-icon">i</span>
-  <span class="asd">Success</span>
-</button>
-
-<button #buttonElement class="mbz-btn mbz-btn-info">
-  <span class="mbz-icon">i</span>
-  <span class="aaa">Info</span>
-</button>
-
-<div (click)="handleClick()" class="copy">Copy</div>
-<div *ngIf="fallback" class="fallback-success">Copied</div>
-
-<button class="mbz-btn mbz-btn-warning">
-  <span class="mbz-icon">i</span>
-  <span>Warning</span>
-</button>
-
-<button class="mbz-btn mbz-btn-danger">
-  <span class="mbz-icon">i</span>
-  <span>Danger</span>
-</button>
-
-<button class="mbz-btn mbz-btn-dark">
-  <span class="mbz-icon">i</span>
-  <span>Dark</span>
-</button>
-
-<button class="mbz-btn mbz-btn-primary">
-  <span class="mbz-icon">i</span>
-  <span>Primary</span>
-</button>
-
-<button class="mbz-btn mbz-btn-gray">
-  <span class="mbz-icon">i</span>
-  <span>Gray</span>
-</button>
-
-<button class="mbz-btn mbz-btn-blue">
-  <span class="mbz-icon">i</span>
-  <span>Blue</span>
-</button>
-
-<button class="mbz-btn mbz-btn-transparent">
-  <span class="mbz-icon">i</span>
-  <span>Transparent</span>
-</button>
-
-<button class="mbz-btn mbz-btn-secondary">
-  <span class="mbz-icon">i</span>
-  <span>Secondary</span>
-</button>
-
-<button class="mbz-btn-alt">
-  <span class="mbz-icon">i</span>
-  <span>Alt</span>
-</button>
-
-<button class="mbz-btn-alt mbz-btn-light">
-  <span class="mbz-icon">i</span>
-  <span>Alt Light</span>
-</button>
-
-<button class="mbz-btn-alt mbz-btn-success">
-  <span class="mbz-icon">i</span>
-  <span>Alt Success</span>
-</button>
-
-<button class="mbz-btn-alt mbz-btn-primary">
-  <span class="mbz-icon">i</span>
-  <span>Alt Primary</span>
-</button>
-
-<button class="mbz-btn-alt mbz-btn-info">
-  <span class="mbz-icon">i</span>
-  <span>Alt Info</span>
-</button>
-
-<button class="mbz-btn-alt mbz-btn-warning">
-  <span class="mbz-icon">i</span>
-  <span>Alt Warning</span>
-</button>
-
-<button class="mbz-btn-alt mbz-btn-danger">
-  <span class="mbz-icon">i</span>
-  <span>Alt Danger</span>
-</button>
-
-<button class="mbz-btn-alt mbz-btn-dark">
-  <span class="mbz-icon">i</span>
-  <span>Alt Dark</span>
-</button>
-
-<button class="mbz-btn-alt mbz-btn-blue">
-  <span class="mbz-icon">i</span>
-  <span>Alt Blue</span>
-</button>
-
-<button class="mbz-btn-alt mbz-btn-secondary">
-  <span class="mbz-icon">i</span>
-  <span>Alt Secondary</span>
-</button>
-
-<button class="mbz-btn mbz-btn-light mbz-btn-ext">
-  <span class="mbz-icon">i</span>
-  <span>Ext</span>
-</button>
-
-<button class="mbz-btn mbz-btn-light mbz-btn-xxl">
-  <span class="mbz-icon">i</span>
-  <span>XXl</span>
-</button>
-
-<button class="mbz-btn mbz-btn-light mbz-btn-xl">
-  <span class="mbz-icon">i</span>
-  <span>Xl</span>
-</button>
-
-<button class="mbz-btn mbz-btn-light mbz-btn-xl-min-width-150">
-  <span class="mbz-icon">i</span>
-  <span>XXl min 150</span>
-</button>
-
-<button class="mbz-btn mbz-btn-light mbz-btn-lg">
-  <span class="mbz-icon">i</span>
-  <span>Large</span>
-</button>
-
-<button class="mbz-btn mbz-btn-light mbz-btn-sm">
-  <span class="mbz-icon">i</span>
-  <span>Small</span>
-</button>
-
-<button class="mbz-btn mbz-btn-light mbz-btn-xs">
-  <span class="mbz-icon">i</span>
-  <span>Extra Small</span>
-</button>
+    <div (click)="copyText(type, size, true)" class="copy">Copy</div>
+    <div *ngIf="fallback" class="fallback-success">Copied</div>
+  </ng-container>
+</ng-container>
