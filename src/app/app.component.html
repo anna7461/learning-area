@@ -1,7 +1,7 @@
 <div class="demo-wrapper">
   <h1>Buttons Kit</h1>
 
-  <!-- <ng-container *ngFor="let type of types; let i = index">
+  <ng-container *ngFor="let type of types; let i = index">
     <div>
       <h3>Type: {{ type }}</h3>
       <div class="grid">
@@ -27,35 +27,36 @@
         </ng-container>
       </div>
     </div>
-  </ng-container> -->
+  </ng-container>
 
-  <div class="demo-content">
+  <!-- <div class="demo-content">
     <div>
       <ng-container *ngFor="let type of types; let i = index">
-        <div>
-          <h3>Type: {{ type }}</h3>
-          <!-- 
+        <ng-container *ngFor="let size of sizes; let i = index">
+          <div>
+            <!-- <h3>Type: {{ type }}</h3> -->
+  <!-- 
           <div style="display: grid; gap: 10px; margin: 10px 0;">
             
           </div> -->
 
-          <!-- <h3>Size</h3> -->
-          <div style="display: flex; gap: 30px">
-            <div style="display: grid; gap: 15px;">
-              <app-button
-                id="buttonElement{{ i }}"
-                label="{{ type }}"
-                type="{{ type }}"
-              ></app-button>
+  <!-- <h3>Size</h3> -->
+  <!-- <div style="display: flex; gap: 30px">
+              <div style="display: grid; gap: 15px;">
+                <app-button
+                  id="buttonElement{{ i }}"
+                  label="{{ type }}"
+                  type="{{ type }}"
+                ></app-button>
 
-              <app-button
-                id="buttonElement{{ i }}"
-                label="{{ type }} outlined"
-                type="{{ type }}"
-                outline
-              ></app-button>
-            </div>
-            <ng-container *ngFor="let size of sizes; let i = index">
+                <app-button
+                  id="buttonElement{{ i }}"
+                  label="{{ type }} outlined"
+                  type="{{ type }}"
+                  outline
+                ></app-button>
+              </div>
+
               <div style="display: grid; gap: 10px;">
                 <app-button
                   id="buttonElement{{ i }}"
@@ -72,35 +73,34 @@
                   outline
                 ></app-button>
               </div>
-            </ng-container>
-          </div>
-        </div>
+            </div> -->
+</div>
 
-        <ng-container *ngFor="let size of sizes; let i = index">
-          <!-- <h3>Sizes: {{ size }}</h3> -->
+<!-- <ng-container *ngFor="let size of sizes; let i = index"> -->
+<!-- <h3>Sizes: {{ size }}</h3> -->
 
-          <!-- <app-button
+<!-- <app-button
             id="buttonElement{{ i }}"
             label="Button {{ size }}"
             type="{{ type }}"
             size="{{ size }}"
           ></app-button> -->
 
-          <!-- <app-button
+<!-- <app-button
             id="buttonElement{{ i }}"
             label="Button {{ size }}"
             type="{{ type }}"
             size="{{ size }}"
             outline
           ></app-button> -->
-        </ng-container>
-      </ng-container>
-    </div>
+<!-- </ng-container> -->
+<!-- </ng-container> -->
+<!-- </div> -->
 
-    <div></div>
-  </div>
+<!-- <div></div> -->
+<!-- </div> -->
 
-  <!-- <ng-container *ngFor="let type of types; let i = index">
+<!-- <ng-container *ngFor="let type of types; let i = index">
   <ng-container *ngFor="let size of sizes; let i = index">
     <app-button
       #buttonElement
@@ -112,4 +112,6 @@
     ></app-button>
   </ng-container>
 </ng-container> -->
-</div>
+<!-- </div>  -->
+<!-- </div> -->
+<!--  -->
