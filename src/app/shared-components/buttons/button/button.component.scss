@@ -300,16 +300,6 @@ $border-radius-xl: 6px;
     }
   }
 
-  &.disabled,
-  &[disabled] {
-    opacity: 0.6;
-    filter: alpha(opacity=60);
-    pointer-events: none;
-    touch-action: none;
-    -ms-touch-action: none;
-    cursor: default;
-  }
-
   &.mbz-btn-secondary {
     background-color: transparent;
     border-color: $secondary;
