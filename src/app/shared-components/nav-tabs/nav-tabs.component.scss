@@ -5,8 +5,14 @@ $error: #f5583e;
 $nav-tabs-active-link-hover-color: #555555;
 $nav-tabs-active-link-hover-bg: #ffffff;
 $nav-tabs-active-link-hover-border-color: #dddddd;
-
 $nav-tabs-border-color: #cccccc;
+
+.nav-tabs-content-title {
+  font-weight: 500;
+  margin: 10px 0 30px;
+  color: #262626;
+  font-size: 18px; // 15px
+}
 
 .nav {
   padding-left: 0;
@@ -132,13 +138,6 @@ $nav-tabs-border-color: #cccccc;
   &.nav-tabs-content-bordered {
     border: 1px solid #dddddd;
     border-top-color: transparent;
-  }
-
-  .nav-tabs-content-title {
-    font-weight: 500;
-    margin: 10px 0 30px;
-    color: #262626;
-    font-size: 18px; // 15px
   }
 }
 
