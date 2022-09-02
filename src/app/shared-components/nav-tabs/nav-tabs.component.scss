@@ -1,0 +1,130 @@
+$nav-link-padding: 10px 15px;
+$nav-link-hover-bg: #ffffff;
+$nav-tabs-link-hover-border-color: #cccccc;
+$error: #f5583e;
+$nav-tabs-active-link-hover-color: #555555;
+$nav-tabs-active-link-hover-bg: #ffffff;
+$nav-tabs-active-link-hover-border-color: #dddddd;
+
+$nav-tabs-border-color: #cccccc;
+
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  &:before,
+  &:after {
+    display: table;
+    content: ' ';
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  > li {
+    position: relative;
+    display: block;
+
+    > a {
+      position: relative;
+      display: block;
+      padding: $nav-link-padding;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        background-color: $nav-link-hover-bg;
+      }
+    }
+
+    // Disabled state sets text to gray and nukes hover/tab effects
+    &.disabled > a {
+      &:hover,
+      &:focus {
+        opacity: 0.6;
+        touch-action: none;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.nav-tabs {
+  border-bottom: 1px solid $nav-tabs-border-color;
+  margin-top: 0;
+  background: #f5f3f4;
+  padding: 0 20px;
+
+  > li {
+    float: left;
+    margin-bottom: -1px;
+
+    > a {
+      margin-right: 2px;
+      line-height: initial;
+      border: 1px solid transparent;
+      border-top-width: 4px;
+      border-radius: 4px 4px 0 0;
+      color: #656565;
+      font-size: 14px;
+      cursor: pointer;
+
+      &:hover {
+        border-color: $nav-tabs-link-hover-border-color
+          $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+        background-color: #ffffff;
+        border-top-color: #dddddd;
+        border-bottom-color: #ffffff;
+      }
+
+      &.disabled {
+        opacity: 0.6;
+        cursor: default;
+        pointer-events: none;
+        touch-action: none;
+      }
+
+      &.hasError {
+        color: $error;
+        background-color: #ffffff;
+        border-color: $nav-tabs-border-color;
+        border-top: 4px solid $error;
+        border-bottom-color: #ffffff;
+      }
+    }
+  }
+
+  > li.active > a {
+    &,
+    &:hover,
+    &:focus {
+      color: $nav-tabs-active-link-hover-color;
+      background-color: $nav-tabs-active-link-hover-bg;
+      border-color: $nav-tabs-active-link-hover-border-color;
+      border-bottom-color: #ffffff;
+      border-top-color: #f78f20;
+      font-weight: 600;
+    }
+  }
+}
+
+.nav-tabs-content {
+  padding: 15px;
+  max-width: 100%;
+
+  &.nav-tabs-content-bordered {
+    border: 1px solid #dddddd;
+    border-top-color: transparent;
+  }
+
+  .nav-tabs-content-title {
+    font-weight: 500;
+    margin: 10px 0 30px;
+    color: #262626;
+    font-size: 18px; // 15px
+  }
+}

@@ -1,0 +1,304 @@
+// $hasError: #f5583e;
+// $error: #f5583e;
+// $accent: #f78f20;
+// $accent-contrast: #ffffff;
+// $text-color: #656565;
+// $tabstrip-border-color: #f78f20;
+// $border-color-gray: #cccccc;
+// $fontWeight-semibold: 500;
+// $font-weight-bold: bold;
+// $border-radius-lg: 4px;
+// /// variables
+// // $nav-item-margin: 2px !default;
+// // $nav-item-padding-x: $padding-x-lg !default;
+// // $nav-item-padding-y: $padding-y-lg !default;
+// $nav-tab-background: #f5f3f4;
+
+// .mbz-sub-tabs {
+//   font-size: inherit;
+//   border: none;
+//   background: #fff;
+//   padding: 0;
+
+//   li {
+//     height: 45px;
+//     display: inline-flex;
+
+//     a {
+//       height: 100%;
+//       padding: 10px 15px;
+//       border: 1px solid $border-color-gray;
+//       border-bottom: 4px solid transparent;
+//       display: block;
+//       color: $text-color;
+//       cursor: pointer;
+//       margin: 0;
+
+//       &:hover,
+//       &:active,
+//       &:focus {
+//         background: none;
+//       }
+
+//       &.active {
+//         border-bottom: 4px solid $accent;
+//       }
+
+//       &.hasError {
+//         color: $error;
+//         border-bottom: 4px solid $error;
+//       }
+
+//       &.newTab {
+//         color: $accent;
+//         background-color: #ebebeb;
+//       }
+//     }
+//   }
+// }
+
+// .nav-container-content {
+//   border: 1px solid $border-color-gray;
+//   padding: 0;
+//   min-height: inherit;
+//   max-height: 250px;
+//   overflow-y: auto;
+//   -ms-overflow-y: auto;
+// }
+
+// /// customer-address.component
+
+// .nav-tabs {
+//   padding: 0;
+// }
+
+// .nav-container-content {
+//   padding: 25px;
+//   border: 1px solid $tabstrip-border-color;
+//   min-height: 300px;
+//   border-top: 0;
+// }
+
+// /// woocommerce-integration-setup.component
+// .nav-tabs-content {
+//   padding: 0 15px 15px 15px;
+// }
+
+// /// product-quick-add-modal.component
+// .nav-tabs {
+//   padding: 0;
+//   background: none;
+// }
+
+// .nav-container-content {
+//   padding: 20px;
+//   border: 1px solid #ddd;
+//   border-top: 0;
+
+//   mbz-frontregister-product-details {
+//     mbz-form-item {
+//       .form-group {
+
+//         label {
+//           line-height: 39px;
+//           margin-bottom: 0;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .contact-content.col-sm-12 {
+//   overflow: hidden;
+//   border: 1px solid $tabstrip-border-color;
+//   height: 73vh;
+// }
+
+// /// .mbz-sub-tabs
+// /// vendor-contacts.component,
+// /// product-sales.component
+// /// customer-transactions.component
+// /// customer-address.component
+// ul.mbz-sub-tabs {
+//   font-size: inherit;
+//   border: none;
+//   li {
+//     height: 45px;
+//     display: inline-flex;
+//     a {
+//       font-size: 16px;
+//       height: 100%;
+//       padding: 10px 15px;
+//       border: 1px solid $border-color-gray;
+//       display: block;
+//       color: $text-color;
+//       cursor: pointer;
+//       margin: 0;
+//       em {
+//         width: 100%;
+//         position: absolute;
+//         left: 0;
+//         right: 0;
+//         bottom: 0;
+//       }
+//       &:hover,
+//       &:active,
+//       &:focus {
+//         background: none;
+//       }
+//       &.active {
+//         em {
+//           border-bottom: 4px solid $accent;
+//         }
+//       }
+//       &.hasError {
+//         color: $error;
+//         em {
+//           border-bottom: 4px solid $error;
+//         }
+//       }
+//       &.newTab {
+//         color: $accent;
+//         background-color: #f5f4f3; //$button-grid-action
+//       }
+//     }
+//   }
+// }
+
+// ul.mbz-sub-tabs {
+//   font-size: inherit;
+//   border: none;
+//   li {
+//     height: 45px;
+//     display: inline-flex;
+//     a {
+//       font-size: 16px;
+//       height: 100%;
+//       padding: 10px 15px;
+//       border: 1px solid #ccc;
+//       display: block;
+//       color: #656565;
+//       cursor: pointer;
+//       margin: 0;
+//       em {
+//         width: 100%;
+//         position: absolute;
+//         left: 0;
+//         right: 0;
+//         bottom: 0;
+//       }
+//       &:hover,
+//       &:active,
+//       &:focus {
+//         background: none;
+//       }
+//       &.active {
+//         em {
+//           border-bottom: 4px solid $accent;
+//         }
+//       }
+//       &.hasError {
+//         color: $error;
+//         em {
+//           border-bottom: 4px solid $error;
+//         }
+//       }
+//       &.newTab {
+//         color: $accent;
+//         background-color: #ebebeb;
+//       }
+//     }
+//   }
+// }
+
+// ul.mbz-sub-tabs {
+//   font-size: inherit;
+//   border: none;
+//   li {
+//     height: 45px;
+//     display: inline-flex;
+//     a {
+//       font-size: 16px;
+//       height: 100%;
+//       padding: 10px 15px;
+//       border: 1px solid #ccc;
+//       display: block;
+//       color: #656565;
+//       cursor: pointer;
+//       margin: 0;
+//       em {
+//         width: 100%;
+//         position: absolute;
+//         left: 0;
+//         right: 0;
+//         bottom: 0;
+//       }
+//       &:hover,
+//       &:active,
+//       &:focus {
+//         background: none;
+//       }
+//       &.active {
+//         em {
+//           border-bottom: 4px solid $accent;
+//         }
+//       }
+//       &.hasError {
+//         color: $error;
+//         em {
+//           border-bottom: 4px solid $error;
+//         }
+//       }
+//       &.newTab {
+//         color: $accent;
+//         background-color: #ebebeb;
+//       }
+//     }
+//   }
+// }
+
+// ul.mbz-sub-tabs {
+//   font-size: inherit;
+//   border: none;
+//   li {
+//     height: 45px;
+//     display: inline-flex;
+//     a {
+//       font-size: 16px;
+//       height: 100%;
+//       padding: 10px 15px;
+//       border: 1px solid #ccc;
+//       display: block;
+//       color: #656565;
+//       cursor: pointer;
+//       margin: 0;
+//       em {
+//         width: 100%;
+//         position: absolute;
+//         left: 0;
+//         right: 0;
+//         bottom: 0;
+//       }
+//       &:hover,
+//       &:active,
+//       &:focus {
+//         background: none;
+//       }
+//       &.active {
+//         em {
+//           border-bottom: 4px solid $accent;
+//         }
+//       }
+//       &.hasError {
+//         color: $error;
+//         em {
+//           border-bottom: 4px solid $error;
+//         }
+//       }
+//       &.newTab {
+//         color: $accent;
+//         background-color: #ebebeb;
+//       }
+//     }
+//   }
+// }

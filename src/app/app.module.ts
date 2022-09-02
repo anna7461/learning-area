@@ -7,6 +7,7 @@ import { HelloComponent } from './hello.component';
 import { SharedComponentsComponent } from './shared-components/shared-components.component';
 import { QuantityInputComponent } from './shared-components/forms/quantity-input/quantity-input.component';
 import { ButtonComponent } from './shared-components/buttons/button/button.component';
+import { NavTabsComponent } from './shared-components/nav-tabs/nav-tabs.component';
 
 import { UiKitDemoComponent } from './ui-kit-demo/ui-kit-demo.component';
 
@@ -18,6 +19,7 @@ import { UiKitDemoComponent } from './ui-kit-demo/ui-kit-demo.component';
     SharedComponentsComponent,
     QuantityInputComponent,
     ButtonComponent,
+    NavTabsComponent,
     UiKitDemoComponent,
   ],
   bootstrap: [AppComponent],
