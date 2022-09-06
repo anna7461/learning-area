@@ -1,0 +1,44 @@
+/// $unit - %, example if $unit= % => width: 5{$unit} = width: 5%,
+/// $step {number} (min value 0 to max int value) - is step for generation properties,
+/// $min-range {number} - minvalue for generation,
+/// $max-range {number} - maxvalue for generation,
+/// $prefix - class name prefix, example, $prefix = "height", result = {height}-{step value} => height-50.
+/// Examples:
+///  @include generate-dimension(%, 10, 10, width);
+///    .width-10 {
+///      width: 10%;
+///    }
+///
+///  @include generate-dimension(%, 5, 10, height);
+///    .height-50 {
+///      height: 50%;
+///    }
+///
+/// In HTML code, you can use already generated classes
+///   Examples:
+///     <div class="width-10"></div>
+
+@mixin generate-dimension($unit, $step, $min-range, $max-range, $prefix) {
+  $count: $min-range;
+
+  @while $count <= $max-range {
+    .#{$prefix}-#{$count} {
+      #{$prefix}: #{$count + $unit};
+    }
+    $count: $count + $step;
+  }
+}
+
+/// Based on the most used indents from Bootstrap and Material Design.
+$step: 5;
+$property-list: (width 0 100, height 0 100);
+
+@each $prefix, $step-count, $max-range in $property-list {
+  @include generate-dimension(
+    $unit: '%',
+    $step: $step,
+    $min-range: $step-count,
+    $max-range: $max-range,
+    $prefix: $prefix
+  );
+}

@@ -59,15 +59,23 @@ $nav-tabs-border-color: #cccccc;
   }
 }
 
+$nav-tabs-background-color: #f5f3f4;
+.nav-tabs {
+  background-color: #ffffff;
+
+  &.has-background {
+    background-color: $nav-tabs-background-color;
+  }
+}
+
 .nav-tabs {
   border-bottom: 1px solid $nav-tabs-border-color;
   margin-top: 0;
-  background: #f5f3f4;
   padding: 0 20px;
 
   > li {
     float: left;
-    margin-bottom: -2px;
+    margin-bottom: -1px;
 
     > a {
       margin-right: 2px;
@@ -80,11 +88,9 @@ $nav-tabs-border-color: #cccccc;
       cursor: pointer;
 
       &:hover {
-        border-color: $nav-tabs-link-hover-border-color
-          $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+        border-color: $nav-tabs-border-color $nav-tabs-border-color #ffffff
+          $nav-tabs-border-color;
         background-color: #ffffff;
-        border-top-color: #dddddd;
-        border-bottom-color: #ffffff;
       }
 
       &.disabled {
@@ -97,9 +103,7 @@ $nav-tabs-border-color: #cccccc;
       &.hasError {
         color: $error;
         background-color: #ffffff;
-        border-color: $nav-tabs-border-color;
-        border-top: 4px solid $error;
-        border-bottom-color: #ffffff;
+        border-color: $error #dddddd #ffffff #dddddd;
       }
     }
   }
@@ -110,18 +114,14 @@ $nav-tabs-border-color: #cccccc;
     &:focus {
       color: $nav-tabs-active-link-hover-color;
       background-color: $nav-tabs-active-link-hover-bg;
-      border-color: $nav-tabs-active-link-hover-border-color;
-      border-bottom-color: #ffffff;
-      border-top-color: #f78f20;
+      border-color: #f78f20 #dddddd #ffffff #dddddd;
       font-weight: 600;
     }
 
     &.hasError {
       color: $error;
       background-color: #ffffff;
-      border-color: $nav-tabs-border-color;
-      border-top: 4px solid $error;
-      border-bottom-color: #ffffff;
+      border-color: $error $nav-tabs-border-color #ffffff $nav-tabs-border-color;
     }
   }
 }
@@ -142,6 +142,10 @@ $nav-tabs-border-color: #cccccc;
 }
 
 .nav.nav-tabs.dir-bottom {
+  > li {
+    margin-bottom: -3px;
+  }
+
   > li.active > a {
     &,
     &:hover,
@@ -192,8 +196,8 @@ $nav-tabs-border-color: #cccccc;
   > li {
     > a {
       font-size: 16px;
-      border: 1px solid #dddddd;
-      border-bottom-color: transparent;
+      border: 1px solid;
+      border-color: #dddddd #dddddd transparent #dddddd;
 
       &.hasError {
         border-bottom: 4px solid $error;

@@ -1,0 +1,143 @@
+/// Usage:
+/// Simply add needed classes by the following syntax to your HTML markup:
+///   <div class="margin-bottom-10">
+///     This element takes margin-bottom property with value of 10px.
+///   </div>
+///
+///   <div class="padding-left-20">
+///     This element takes padding-left property with value of 20px.
+///   </div>
+///
+/// Generates utility classes regarding margin and padding-related spacing properties for general usage:
+///   .margin-left-20,
+///   .padding-0,
+///   .margin-right-25,
+///   .padding-bottom-15, etc.
+
+@mixin generate-space($unit, $step, $min-range, $max-range, $prefix) {
+  $count: $min-range;
+
+  @while $count <= $max-range {
+    .#{$prefix}-#{$count} {
+      #{$prefix}: #{$count + $unit};
+    }
+    $count: $count + $step;
+  }
+}
+
+/// The $property-list below declares arguments by the following ordering:
+/// <$prefix> <$min-range> <$max-range>
+$property-list: (
+  padding 0 30,
+  padding-left 0 30,
+  padding-right 0 30,
+  padding-top 0 30,
+  padding-bottom 0 30,
+  margin 0 30,
+  margin-left 0 30,
+  margin-right 0 30,
+  margin-top 0 30,
+  margin-bottom 0 30
+);
+
+/// Based on the most used indents from Bootstrap and Material Design.
+$step: 1;
+
+@each $prefix, $step-count, $max-range in $property-list {
+  @include generate-space(
+    $unit: px,
+    $step: $step,
+    $min-range: $step-count,
+    $max-range: $max-range,
+    $prefix: $prefix
+  );
+}
+
+/// Generates utility classes regarding margin/padding horizontally/vertically properties for general usage.
+/// Usage:
+/// Simply add class name by the following syntax to your HTML markup:
+///   <div class="margin-horizontally-10">
+///     This element takes margin-left and margin-right values to 10px each side of horizontal alignment.
+///   </div>
+///
+///   <div class="padding-vertically-20">
+///     This element takes padding-top and padding-bottom values to 20px each side of vertical alignment.
+///   </div>
+
+@mixin generate-sides(
+  $unit,
+  $min-range,
+  $max-range,
+  $prefix,
+  $property-1,
+  $property-2
+) {
+  $count: $min-range;
+
+  @while $count <= $max-range {
+    .#{$prefix}-#{$count} {
+      #{$property-1}: #{$count + $unit};
+      #{$property-2}: #{$count + $unit};
+    }
+    $count: $count + $step;
+  }
+}
+
+/// The $property-list below declares arguments by the following ordering:
+/// $prefix $property-1 $property-2 $min-range $max-range
+$property-list: (
+  padding-horizontally padding-left padding-right 0 30,
+  padding-vertically padding-top padding-bottom 0 30,
+  margin-horizontally margin-left margin-right 0 30,
+  margin-vertically margin-top margin-bottom 0 30
+);
+
+/// Based on the most used indents from Bootstrap and Material Design.
+$step: 5;
+
+/// Note: When the direction is "horizontal", the $property-1 declares "left" direction, and the $property-2 declares
+/// "right" direction.
+///   For example:
+///     .margin-horizontally-10 {
+///         margin-left: 10px;
+///         margin-right: 10px;
+///     }
+///
+/// Note: As same as when the direction is "vertical", the $property-1 declares "top" direction, and the $property-2
+///   declares "bottom" direction.
+///     For example:
+///       .padding-vertically-10 {
+///         padding-top: 10px;
+///         padding-bottom: 10px;
+///       }
+
+@each $prefix, $property-1, $property-2, $min-range,
+  $max-range in $property-list
+{
+  @include generate-sides(
+    $unit: px,
+    $prefix: $prefix,
+    $property-1: $property-1,
+    $property-2: $property-2,
+    $min-range: $min-range,
+    $max-range: $max-range
+  );
+}
+
+.margin-vertically-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.margin-horizontally-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin-top-45 {
+  margin-top: 45px;
+}
+
+.margin-top-35 {
+  margin-top: 35px;
+}

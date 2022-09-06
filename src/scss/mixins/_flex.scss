@@ -1,47 +1,68 @@
-/// Mixin to define flexbox-related properties for parent container.
+///  Flex mixin for parent container.
+///  Usage examples:
+///    .flex-container {
+///       @include flex($align-items: center);
+///    }
 @mixin flex(
   $display: flex,
-  $direction: null,
-  $wrap: null,
-  $align-items: center,
-  $justify-content: center,
+  $flow: row nowrap,
+  $align-items: stretch,
+  $justify-content: flex-start,
   $gap: 0
 ) {
   display: $display;
-  flex-flow: $direction $wrap;
+  flex-flow: $flow;
   align-items: $align-items;
   justify-content: $justify-content;
   gap: $gap;
-
-  @content;
 }
 
+///  Mixin to control space between flex lines on the cross axis.
+///  Usage:
+///  .container {
+///    @include flex-align-content($align-content: flex-start);
+///  }
+
+@mixin flex-align-content($align-content: stretch, $direction: row) {
+  display: flex;
+  align-content: $align-content;
+  flex-flow: $direction wrap;
+}
+
+///  Flex-item mixin for child item.
 @mixin flex-item($flex: 1 0 auto, $order: 0) {
   flex: $flex;
   order: $order;
-
-  @content;
 }
 
-/// generate mixins based on flex common usages
+///  Generates classes based on most common usage of  flex align-items and justify-content properties from the map below.
+///  Class names generates by the following order:
+///      .flex-{align-items-value}-{justify-content-value}
+///  Examples: .flex-center-center, .flex-center-space-between etc.
+///  Usage:
+///  The following generated classes are only for usage in .scss files with @extend at-rule.
+///  Import current module to .scss file and @extend it like placeholder selectors:
+///    .example-container {
+///      @extend .flex-align-center-justify-space-between;
+///    }
 $flex-shared-properties: (
   set1: (
-    display: flex,
     align-items: center,
     justify-content: center,
   ),
   set2: (
-    display: flex,
     align-items: center,
     justify-content: space-between,
   ),
   set3: (
-    display: flex,
+    align-items: center,
+    justify-content: flex-end,
+  ),
+  set4: (
     align-items: flex-start,
     justify-content: space-between,
   ),
-  set4: (
-    display: flex,
+  set5: (
     align-items: flex-end,
     justify-content: space-between,
   ),
@@ -51,9 +72,82 @@ $flex-shared-properties: (
   $align-items: map-get($flex-shared-properties, $set, align-items);
   $justify-content: map-get($flex-shared-properties, $set, justify-content);
 
-  .flex-#{$align-items}-#{$justify-content} {
+  .align-#{$align-items}-justify-#{$justify-content} {
     display: flex;
     align-items: $align-items;
     justify-content: $justify-content;
   }
+}
+
+///  Mixins for flex common usages. Mixin names include property values by the following order:
+///    @mixin align-{align-items}-justify-{justify-content}{direction}-{wrap}
+///  Usage examples:
+///    .container-1 {
+///      @include flex-column-wrap-align-center-justify-center;
+///    }
+////   .container-2 {
+///      @include align-center-justify-space-between;
+///    }
+@mixin align-center-justify-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin align-center-justify-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin align-flex-start-justify-space-between {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+@mixin align-flex-end-justify-space-between {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+@mixin justify-space-between-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@mixin align-center-justify-center-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin align-center-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin align-center-justify-space-between-column-wrap {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin align-center-justify-flex-end-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
 }
