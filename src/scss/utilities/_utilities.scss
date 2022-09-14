@@ -1,3 +1,5 @@
+@use '../variables';
+
 .invisible {
   visibility: hidden;
 }
@@ -116,12 +118,12 @@ button:focus:not(:focus-visible) {
 
 dl {
   margin-top: 0;
-  margin-bottom: $line-height-computed;
+  margin-bottom: variables.$line-height-computed;
 }
 
 dt,
 dd {
-  line-height: $line-height-base;
+  line-height: variables.$line-height-base;
 }
 
 dt {
